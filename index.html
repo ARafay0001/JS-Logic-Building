@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <input placeholder="mango,banana,apple" type="text" id="item">
+    <button  onclick="OnClick()" >Submit</button>
+    <script>
+        // document.write("hello")
+        var arrays = [ "a","b","c","d","e","a","f","c","a","z"];
+        // document.write( 'array : ' + arrays);
+        
+        for (var i = 0; i <= arrays.length - 1; i++){
+             for (var j = 0; j <= arrays.length - 1; j++){
+            
+            if (arrays[i] === arrays[j]) {
+                for (var k = i + 1 ;k <= arrays.length -1; k++) {
+                    if (arrays[j] === arrays[k])
+                    arrays.splice(k, 1);
+                }
+            }
+            }
+        }
+        document.write(`<div> array :   ${arrays} </div>`);
+
+
+        var array1 = [1, 2, 3, 4];
+        var array2 = [3, 4, 5, 6];
+        
+        arrays = array1.concat(array2);
+        // document.write(array1);
+
+        for (var i = 0; i <= arrays.length - 1; i++){
+             for (var j = 0; j <= arrays.length - 1; j++){
+            
+            if (arrays[i] === arrays[j]) {
+                for (var k = i + 1 ;k <= arrays.length -1; k++) {
+                    if (arrays[j] === arrays[k])
+                    arrays.splice(k, 1);
+                }
+            }
+            }
+        }
+        document.write(` <div> "AUB : " ${arrays} </div> `);
+
+
+       function OnClick() {
+         var fruits = ["apple", "banana", "mango"];
+
+        var userInput = document.getElementById('item').value;
+
+        for (var i = 0; i <= fruits.length - 1; i++ ) {
+            if (userInput === fruits[i]) {
+                document.write(fruits[i] + " is available in the bucket at index no : " + i);
+            }
+        }
+       }
+
+    </script>
+</body>
+</html>
